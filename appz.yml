@@ -13,6 +13,7 @@ build:
 
 deploy:
   context: myco/DEV
+  type: statefulset
   replicas: 1
   port:
   - 27017
@@ -21,7 +22,7 @@ volumes:
 - claim: mongo-pvc
   mount: /appz/data
   name: data
-  size: 5Gi
+  size: 50Gi
   mode: ReadWriteOnce
   class: standard
   matchLabels: false
